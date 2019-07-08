@@ -10,6 +10,9 @@ public class First_program
 		System.setProperty("webdriver.firefox.marionette","exePath");
 		WebDriver driver = new FirefoxDriver();
 		driver.get("https://www.google.com");
+		driver.get("https://www.google.com");
+
+		
 
 	}
 
