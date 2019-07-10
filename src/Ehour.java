@@ -157,7 +157,7 @@ public class Ehour
 					{
 						System.out.println(i);
 						i++;
-						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]")).sendKeys(rtime);;
+						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]")).sendKeys(rtime);
 						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='options']/a)["+i+"]")).click();
 						i--;
 						System.out.println(driver.findElement(By.xpath("(//textarea[@class='timesheetTextarea'])[2]")).getText());
