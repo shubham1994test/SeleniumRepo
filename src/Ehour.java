@@ -42,43 +42,7 @@ public class Ehour
 		Thread.sleep(10000);
 		driver.navigate().refresh();
 		driver.findElement(By.xpath("(//tr[@jscontroller='ZdOxDb'])[1]")).click();
-//		String etime = driver.findElement(By.xpath("//span[contains(text(),'hours ago')]")).getText();
-//		if(etime.length()>24)
-//		{
-//			String r=etime.substring(12, 16);
-//			etime= r.concat(":00");
-//		}
-//		else 
-//		{
-//			String[] a = etime.split(" ");
-//			etime="0"+a[0].concat(":00");
-//		}
-//		String[] index = etime.split(":");
-//		int hours = Integer.parseInt(index[0])+12;
-//		etime=hours+":"+index[1]+":"+index[2];
-//		String arrivaltime = "09:30:00";
-//		SimpleDateFormat de = new SimpleDateFormat("HH:mm:ss");
-//		Date stopt = de.parse(etime);
-//		Date startt = de.parse(arrivaltime);
-//		DateTime dt1 = new DateTime(startt);
-//		DateTime dt2 = new DateTime(stopt);
-//		int hr = Hours.hoursBetween(dt1, dt2).getHours() % 24;
-//		int min = Minutes.minutesBetween(dt1, dt2).getMinutes() % 60;
-//		if (min<=15)
-//		{
-//			min= 15;
-//		}
-//		if(min>=15 && min<=30)
-//		{
-//			min=50;
-//		}
-//		if(min>=30 && min<=45)
-//		{
-//			min=75;
-//		}
-//		String rtime = hr + "."+ min;
-//		System.out.println(rtime);	
-		
+
 		String str = driver.findElement(By.xpath("//h2[@class='hP']")).getText(); 
 		if(str.contains("Daily Status"))
 		{	
@@ -118,8 +82,6 @@ public class Ehour
 			}
 			String rtime = hr + "."+ min;
 			System.out.println(rtime);		
-			
-			
 			String n = str.substring(14,18);
 			String[] j = n.split("-");
 			String date = j[0];
@@ -146,7 +108,7 @@ public class Ehour
 			Thread.sleep(5000);	
 			List<WebElement> Fixeddates = driver.findElements(By.xpath("//td[@class='day' or @class='day borderless']"));
 			System.out.println(Fixeddates.size());
-					List<WebElement> Projectname = driver.findElements(By.xpath("//span[@class='projectName projectNameFilter']"));
+			List<WebElement> Projectname = driver.findElements(By.xpath("//span[@class='projectName projectNameFilter']"));
 			for(int i =0;i<Fixeddates.size();i++)
 			{
 				String z = Fixeddates.get(i).getText();
@@ -157,12 +119,12 @@ public class Ehour
 					{
 						System.out.println(i);
 						i++;
+						WebElement hrcol = driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]"));
+						if(hrcol.getAttribute("value").equals("")) 
+						{
 						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]")).sendKeys(rtime);
 						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='options']/a)["+i+"]")).click();
 						i--;
-						System.out.println(driver.findElement(By.xpath("(//textarea[@class='timesheetTextarea'])[2]")).getText());
-						if(driver.findElement(By.xpath("(//textarea[@class='timesheetTextarea'])[2]")).getText().equals(""))
-						{
 							for(int l=0;l<al.size();l++) 
 							{ 
 								driver.findElement(By.xpath("(//textarea[@class='timesheetTextarea'])[2]")).sendKeys(al.get(l));
@@ -173,12 +135,9 @@ public class Ehour
 							driver.findElement(By.xpath("(//span[text()='store'])[2]")).click();
 						}
 						else
-							System.out.println("Status already saved for this date" + str);
+							System.out.println("Status already saved for this date " + str);
 					}
-					else 
-					{
-						
-					}
+
 				}
 			}
 		}
