@@ -18,16 +18,18 @@ public class Ehour
 {
 	public static void main(String[] args) throws InterruptedException, ParseException 
 	{
-		//---------------Setting chrome driver and opening it----------------------
-		String chromepath = "D:\\chromedriver.exe";
-		System.setProperty("webdriver.chrome.driver", chromepath);
+		
+//---------------Setting chrome driver and opening it----------------------
+		String exePath = "D:/chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", exePath);
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//---------------Logging in Gmail and fetching status data----------------------
 
+//---------------Logging in Gmail and fetching status data----------------------
+		
 		driver.get("http://www.gmail.com");
 		driver.findElement(By.xpath("//input[@type='email']")).sendKeys("Shubham.gupta@redblink.net");
 		driver.findElement(By.xpath("//span[text()='Next']")).click();
@@ -47,7 +49,7 @@ public class Ehour
 			String etime = driver.findElement(By.xpath("//span[contains(text(),'hours ago')]")).getText();
 			if(etime.length()>24)
 			{
-				String r=etime.substring(12, 16);
+				String r=etime.substring(13, 17);
 				etime= r.concat(":00");
 			}
 			else 
@@ -120,9 +122,9 @@ public class Ehour
 						WebElement hrcol = driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]"));
 						if(hrcol.getAttribute("value").equals("")) 
 						{
-							driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]")).sendKeys(rtime);
-							driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='options']/a)["+i+"]")).click();
-							i--;
+						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='sunday' or @class='weekday' or @class='saturday']/input)["+i+"]")).sendKeys(rtime);
+						driver.findElement(By.xpath("(//span[text()='383media Reporting']/../..//td[@class='options']/a)["+i+"]")).click();
+						i--;
 							for(int l=0;l<al.size();l++) 
 							{ 
 								driver.findElement(By.xpath("(//textarea[@class='timesheetTextarea'])[2]")).sendKeys(al.get(l));
@@ -135,10 +137,11 @@ public class Ehour
 						else
 							System.out.println("Status already saved for this date " + str);
 					}
+
 				}
 			}
 		}
-		else
+		else 
 			System.out.println("Status mail not found");
 	}
 }
