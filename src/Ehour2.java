@@ -20,8 +20,7 @@ public class Ehour2
 
 
 
-		//		String exePath = "F:/Selenium/chromedriver_win32/chromedriver.exe";
-		//		System.setProperty("webdriver.chrome.driver", exePath);
+		
 		//		WebDriver driver = new ChromeDriver();
 		//		driver.manage().window().maximize();
 		//
