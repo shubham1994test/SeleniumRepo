@@ -1,0 +1,59 @@
+[33mcommit 82d8f120ca4c00205710e88329cd6006d8e1617d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: shubhams1994 <shubham.gupta@redblink.net>
+Date:   Tue Jul 16 16:25:05 2019 +0530
+
+    test
+
+
+[33mcommit 2336b7f195554e3f73e35bf9424912b9a5caedb3[m
+Author: shubhams1994 <shubham.gupta@redblink.net>
+Date:   Tue Jul 16 11:18:25 2019 +0530
+
+    changes new
+
+
+[33mcommit 6c5b823cd63c52f4073fba77dad05db3cd5e9847[m
+Author: shubhams1994 <shubham.gupta@redblink.net>
+Date:   Wed Jul 10 15:10:32 2019 +0530
+
+    fixed issues
+
+
+[33mcommit cf411ac3356dd4e1a09498ae163442033449a1da[m
+Author: shubhams1994 <shubham.gupta@redblink.net>
+Date:   Wed Jul 10 11:21:54 2019 +0530
+
+    new changes
+
+
+[33mcommit 755919e09dd5c766d1e7252a187a930e9f675779[m
+Author: shubham1994test <52388954+shubham1994test@users.noreply.github.com>
+Date:   Wed Jul 10 10:22:25 2019 +0530
+
+    Timing slot value added
+
+
+[33mcommit 3f790f0eda1a989c2e546d83d43cbd64bfaca777[m
+Author: Shubham gupta <shub.sangam@gmail.com>
+Date:   Mon Jul 8 21:43:40 2019 +0530
+
+    new updates
+
+ create mode 100644 bin/Forgittest.class
+ create mode 100644 src/Forgittest.java
+
+[33mcommit c11c8bac1ea87e8ef0ff75b7ba15670e20bc8e3f[m
+Author: Shubham gupta <shub.sangam@gmail.com>
+Date:   Mon Jul 8 21:00:01 2019 +0530
+
+    commiting code
+
+ create mode 100644 .classpath
+ create mode 100644 .project
+ create mode 100644 .settings/org.eclipse.jdt.core.prefs
+ create mode 100644 bin/Ehour.class
+ create mode 100644 bin/Ehour2.class
+ create mode 100644 bin/First_program.class
+ create mode 100644 src/Ehour.java
+ create mode 100644 src/Ehour2.java
+ create mode 100644 src/First_program.java
